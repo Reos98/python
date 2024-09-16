@@ -1,4 +1,4 @@
-# Definir la matriz 3D de temperaturas
+# Definir la matriz 3D de temperaturas (modificada) modificacion de codigo de la semana 12
 temperaturas = [
     [   # Ciudad 1
         [78, 80, 82, 79, 85, 88, 92],  # Semana 1
@@ -7,10 +7,10 @@ temperaturas = [
         [75, 78, 80, 79, 84, 87, 91]   # Semana 4
     ],
     [   # Ciudad 2
-        [62, 64, 68, 70, 73, 75, 79],  # Semana 1
-        [63, 66, 70, 72, 75, 77, 81],  # Semana 2
-        [61, 65, 68, 70, 72, 76, 80],  # Semana 3
-        [64, 67, 69, 71, 74, 77, 80]   # Semana 4
+        [72, 74, 78, 70, 73, 75, 79],  # Semana 1 (modificada)
+        [73, 66, 70, 72, 75, 77, 81],  # Semana 2 (modificada)
+        [71, 65, 68, 70, 72, 76, 80],  # Semana 3 (modificada)
+        [74, 67, 69, 71, 74, 77, 80]   # Semana 4 (modificada)
     ],
     [   # Ciudad 3
         [90, 92, 94, 91, 88, 85, 82],  # Semana 1
@@ -20,12 +20,14 @@ temperaturas = [
     ]
 ]
 
-# Cambiar los valores que no están en el rango [70, 90]
+# Cambiar los valores que no están en el rango [70, 90] (modificado)
 for ciudad in temperaturas:
     for semana in ciudad:
         for index in range(len(semana)):
-            if semana[index] < 70 or semana[index] > 90:
-                semana[index] = 70  # Cambiar a un valor dentro del rango
+            if semana[index] < 70:
+                semana[index] = 70
+            elif semana[index] > 90:
+                semana[index] = 90
 
 # Calcular y mostrar el promedio de temperaturas para cada ciudad y semana
 for i, ciudad in enumerate(temperaturas):
